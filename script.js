@@ -3,11 +3,12 @@ const size = document.getElementById("sizeinput");
 const colour = document.getElementById("colourinput");
 const box = document.getElementById("box");
 
+//change colour
 colour.addEventListener("input", function () {
     box.style.background = colour.value;
 });
 
-
+//change size
 button.addEventListener("click", function () {
     //console.log(size.value)
 
@@ -24,7 +25,7 @@ button.addEventListener("click", function () {
     box.style.height = size.value + 'px';
 });
 
-//press enter key to submit
+//press enter key to submit size
 size.addEventListener("keyup", function (event) {
     event.preventDefault();
     if (event.keyCode === 13) {
@@ -32,9 +33,9 @@ size.addEventListener("keyup", function (event) {
     }
 });
 
-size.addEventListener("keydown", function(event) {
-    // prevent: "e", "=", ",", "-", "."
+// prevent: "e", "=", ",", "-", "."
+size.addEventListener("keydown", function (event) {
     if ([69, 187, 188, 189, 190].includes(event.keyCode)) {
-      event.preventDefault();
+        event.preventDefault();
     }
-  })
+})
